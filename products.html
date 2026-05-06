@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品目录 - 萌宠之家</title>
+  <meta name="description" content="浏览萌宠之家精选的宠物食品、玩具、配件和健康用品。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3A6347',
+            secondary: '#D4A373',
+            accent: '#C44536',
+            background: '#FEFAE0',
+            text: '#283618',
+          },
+          fontFamily: {
+            heading: ['Fredoka', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Fredoka', sans-serif; }
+  </style>
+</head>
+<body class="bg-background text-text min-h-screen flex flex-col">
+  <nav class="bg-primary text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10">
+          <path d="M20 45 V85 C20 87.761 22.239 90 25 90 H75 C77.761 90 80 87.761 80 85 V45" fill="#D4A373"/>
+          <path d="M10 50 L50 15 L90 50" stroke="#3A6347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <g fill="#C44536">
+            <path d="M50 75 C42 75 38 68 38 62 C38 55 44 52 50 52 C56 52 62 55 62 62 C62 68 58 75 50 75 Z"/>
+            <circle cx="35" cy="50" r="6"/>
+            <circle cx="43" cy="40" r="6"/>
+            <circle cx="57" cy="40" r="6"/>
+            <circle cx="65" cy="50" r="6"/>
+          </g>
+        </svg>
+        <span class="text-xl font-heading font-bold">萌宠之家</span>
+      </a>
+      <div class="flex gap-6 font-medium">
+        <a href="products.html" class="hover:text-secondary transition-colors">商品目录</a>
+        <a href="about.html" class="hover:text-secondary transition-colors">关于我们</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-12 px-4 max-w-7xl mx-auto flex-grow w-full">
+    <h1 class="font-heading text-3xl md:text-4xl font-bold text-text mb-8 text-center">商品目录</h1>
+    <p class="text-center text-text/70 mb-8">浏览我们精选的宠物用品</p>
+
+    <div id="category-filters" class="flex flex-wrap gap-3 mb-8 justify-center">
+      <button onclick="filterProducts('all')" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-primary text-white">全部</button>
+      <button onclick="filterProducts('food')" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-gray-200 text-text hover:bg-gray-300">食品</button>
+      <button onclick="filterProducts('toys')" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-gray-200 text-text hover:bg-gray-300">玩具</button>
+      <button onclick="filterProducts('accessories')" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-gray-200 text-text hover:bg-gray-300">配件</button>
+      <button onclick="filterProducts('health')" class="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-gray-200 text-text hover:bg-gray-300">健康</button>
+    </div>
+
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        
+    </div>
+
+    <div id="empty-state" class="text-center py-12 text-gray-500 hidden">暂无该分类下的商品</div>
+  </main>
+
+  <footer class="bg-text text-white py-8 px-4 mt-auto">
+    <div class="max-w-6xl mx-auto text-center">
+      <p>&copy; 2024 萌宠之家. 保留所有权利.</p>
+    </div>
+  </footer>
+
+  <script src="products.js"></script>
+  <script>
+    const categoryMap = {
+      food: '食品',
+      toys: '玩具',
+      accessories: '配件',
+      health: '健康',
+    };
+
+    function filterProducts(category) {
+      const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+      document.getElementById('product-grid').innerHTML = filtered.map(p => `
+        <a href="product.html?id=${p.id}" class="block group">
+          <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow p-4 h-full flex flex-col">
+            <div class="bg-gray-200 aspect-square rounded-lg mb-4 w-full"></div>
+            <div class="flex flex-col flex-grow">
+              <h2 class="font-heading text-lg font-semibold text-text mb-2 line-clamp-2 group-hover:text-primary transition-colors">${p.name_zh}</h2>
+              <div class="mt-auto flex items-center justify-between pt-2">
+                <span class="text-accent font-bold text-xl">¥${p.price}</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 text-text rounded">${categoryMap[p.category]}</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+      document.getElementById('empty-state').classList.toggle('hidden', filtered.length > 0);
+
+      document.querySelectorAll('#category-filters button').forEach(btn => {
+        btn.classList.toggle('bg-primary', btn.textContent === (category === 'all' ? '全部' : categoryMap[category]));
+        btn.classList.toggle('text-white', btn.textContent === (category === 'all' ? '全部' : categoryMap[category]));
+        btn.classList.toggle('bg-gray-200', btn.textContent !== (category === 'all' ? '全部' : categoryMap[category]));
+        btn.classList.toggle('text-text', btn.textContent !== (category === 'all' ? '全部' : categoryMap[category]));
+      });
+    }
+
+    filterProducts('all');
+  </script>
+</body>
+</html>

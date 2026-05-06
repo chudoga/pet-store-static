@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 萌宠之家</title>
+  <meta name="description" content="了解萌宠之家的故事、使命和店铺信息。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3A6347',
+            secondary: '#D4A373',
+            accent: '#C44536',
+            background: '#FEFAE0',
+            text: '#283618',
+          },
+          fontFamily: {
+            heading: ['Fredoka', 'sans-serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Fredoka', sans-serif; }
+  </style>
+</head>
+<body class="bg-background text-text min-h-screen flex flex-col">
+  <nav class="bg-primary text-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10">
+          <path d="M20 45 V85 C20 87.761 22.239 90 25 90 H75 C77.761 90 80 87.761 80 85 V45" fill="#D4A373"/>
+          <path d="M10 50 L50 15 L90 50" stroke="#3A6347" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <g fill="#C44536">
+            <path d="M50 75 C42 75 38 68 38 62 C38 55 44 52 50 52 C56 52 62 55 62 62 C62 68 58 75 50 75 Z"/>
+            <circle cx="35" cy="50" r="6"/>
+            <circle cx="43" cy="40" r="6"/>
+            <circle cx="57" cy="40" r="6"/>
+            <circle cx="65" cy="50" r="6"/>
+          </g>
+        </svg>
+        <span class="text-xl font-heading font-bold">萌宠之家</span>
+      </a>
+      <div class="flex gap-6 font-medium">
+        <a href="products.html" class="hover:text-secondary transition-colors">商品目录</a>
+        <a href="about.html" class="hover:text-secondary transition-colors">关于我们</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    <section class="py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-text">关于萌宠之家</h1>
+
+        <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+          <p class="text-lg leading-relaxed text-text/80 mb-4">萌宠之家成立于2020年，致力于为每一位宠物主人提供最优质的产品和服务。我们相信，每一只宠物都是家庭的重要成员，值得拥有最好的关怀。</p>
+          <p class="text-lg leading-relaxed text-text/80">从天然健康的宠物食品到舒适实用的配件用品，我们用心挑选每一件商品，让您的爱宠拥有幸福健康的生活。</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-text">我们的使命</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-accent text-xl">❤️</span>
+              <span class="text-text/80">用爱心照顾每一个小生命</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent text-xl">⭐</span>
+              <span class="text-text/80">提供最优质的宠物用品</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-accent text-xl">🏠</span>
+              <span class="text-text/80">让每个宠物家庭都幸福快乐</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-text">店铺信息</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 p-3 bg-background rounded-lg">
+              <span class="text-xl">📍</span>
+              <div>
+                <p class="font-semibold text-text">地址</p>
+                <p class="text-text/70">上海市浦东新区萌宠路123号</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-background rounded-lg">
+              <span class="text-xl">📞</span>
+              <div>
+                <p class="font-semibold text-text">电话</p>
+                <p class="text-text/70">400-123-4567</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-background rounded-lg">
+              <span class="text-xl">🕐</span>
+              <div>
+                <p class="font-semibold text-text">营业时间</p>
+                <p class="text-text/70">每天 9:00-21:00</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-background rounded-lg">
+              <span class="text-xl">📧</span>
+              <div>
+                <p class="font-semibold text-text">邮箱</p>
+                <p class="text-text/70">info@mengchongzhijia.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="bg-white rounded-xl shadow-md p-8 mb-8">
+          <h2 class="text-2xl font-bold mb-6 text-text">联系我们</h2>
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-text mb-1">姓名 <span class="text-accent">*</span></label>
+              <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="请输入您的姓名">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-text mb-1">邮箱 <span class="text-accent">*</span></label>
+              <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="请输入您的邮箱">
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-text mb-1">电话</label>
+              <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="请输入您的电话（选填）">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-text mb-1">留言内容 <span class="text-accent">*</span></label>
+              <textarea id="message" name="message" required rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none resize-none" placeholder="请输入您的留言..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors">提交留言</button>
+          </form>
+          <div id="form-success" class="bg-green-100 text-green-800 p-4 rounded-lg text-center mt-4 hidden">感谢您的留言！我们会尽快回复您。</div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="aspect-video bg-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-lg">地图加载区域</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-text text-white py-8 px-4 mt-auto">
+    <div class="max-w-6xl mx-auto text-center">
+      <p>&copy; 2024 萌宠之家. 保留所有权利.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('form-success').classList.remove('hidden');
+      setTimeout(() => {
+        this.reset();
+        this.style.display = 'block';
+        document.getElementById('form-success').classList.add('hidden');
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
